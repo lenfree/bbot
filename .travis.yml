@@ -1,0 +1,14 @@
+language: go
+go:
+- 1.7
+deploy:
+  provider: releases
+  api_key:
+    secure: hQTTlD8rtRJChwfK+P8lQg2sLmvLB3c2CGouiJBDjcZXtpvTorZI8AsDTmd3iEKezK9J1TVN7rV7m3ODPmsuB7d+a2WXnBhu+pVXU2MURcWy5otrks9naOhR+9EHb3QuTx6/A5tQG6dmKrFixBhsjns6wD8koabktgfe8nmGB31NaxGnE7JX7TjO4mkzDVsUlcZk18eaObhxK9ApxdU2ay9HpTGhj7zxS41xtWvSBdYcU244HqcCP1UBl5vNYZrorKqd5rvKmB6JmezjAQP9iHNZv3oohl5mie1IUHcry5tdlQ3B9UC1rA8uOOH8KmitQnyaj+RJgrCvNjKPJKrzVNXlKRJMD7pqNIy6rZx1E2wjNNah+qMIULY7OtfuJoYWdQAYTXVFSkfpAFLHaKFp7YUFKRnuV3wIiVVQjHa9nbt7GpWdFar3WlQm2JTyZEIWzRdqAK/hV7rXVQMnhcafXqOXcEK3nA3uNG9DjquouROmE538JF9hI7X7p9uvUdNSEa08nlpWrbWPRtDYCOjgJlGw1I5TIm+L/+jAqEF13lgmdWb1tEPvVJhCuXCLbIxagCzjIfe/xBeBYDNXLs8lt9qssN7YEMUDaMznJI9b+QrnO32DwaJMFq/g+4Lf/273tuc+sNymINoduWixjFk6Z6bNZ6fXtOu4URFd+hT8jaI=
+  file:
+    - release/bbot-linux-amd64
+    - release/bbot-darwin-amd64
+    - release/bbot-linux-arm
+  on:
+    repo: lenfree/bbot
+    tags: true
