@@ -29,7 +29,7 @@ func main() {
 	bot.Hear("(?i)how are you(.*)").MessageHandler(HowAreYouHandler)
 	//bot.Hear("(?i)(.*)").MessageHandler(HowAreYouHandler)
 	bot.Hear("(?)attachment").MessageHandler(AttachmentsHandler)
-	bot.Hear("(?i)nba(.*)").MessageHandler(NbaScoresHandler)
+	bot.Hear("(?i)nba score(.*)").MessageHandler(NbaScoresHandler)
 	bot.Run()
 }
 
