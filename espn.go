@@ -270,7 +270,13 @@ func NbaScoresHandler(ctx context.Context, bot *slackbot.Bot, evt *slack.Message
 		// Sportsradar API terms and agreement one call per second
 		delayMilliSecond(300)
 		s := summary(g)
-		output := "Qtr " + strconv.Itoa(s.Quarter) + " " + s.Away.Name + " " + strconv.Itoa(s.Away.Points) + " - " + s.Home.Name + " " + strconv.Itoa(s.Home.Points)
+
+		var output string
+		if s.Status == "closed" {
+			output = "Final   " + s.Away.Name + " " + strconv.Itoa(s.Away.Points) + " - " + s.Home.Name + " " + strconv.Itoa(s.Home.Points)
+		} else {
+			output = "Qtr " + strconv.Itoa(s.Quarter) + "   " + s.Away.Name + " " + strconv.Itoa(s.Away.Points) + " - " + s.Home.Name + " " + strconv.Itoa(s.Home.Points)
+		}
 		bot.Reply(evt, output, slackbot.WithTyping)
 	}
 }
