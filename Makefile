@@ -19,3 +19,7 @@ release: install script
 	GOOS=linux GOARCH=amd64 go build -o release/$(DEFAULT_NAME)-linux-amd64 $(package)
 	GOOS=linux GOARCH=arm go build -o release/$(DEFAULT_NAME)-linux-arm $(package)
 	GOOS=darwin GOARCH=amd64 go build -o release/$(DEFAULT_NAME)-darwin-amd64 $(package)
+
+.PHONY: run
+run:
+	@go run **.go
